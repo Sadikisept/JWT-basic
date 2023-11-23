@@ -1,9 +1,10 @@
+const express = require('express')
+const router = express.Router()
+
+const {login,dashboard} = require('../controllers/main')
 
 
-const login = async (req,res) =>{
-    res.send('Fake Logi /Register/Signup Route')
-}
+router.route('/dashboard').get(dashboard)
+router.route('/login').post(login)
 
-const dashboard = async (req,res) =>{
-    const luckyNumber = Math.floor(Math.random()*100) 
-}
+module.exports = router
